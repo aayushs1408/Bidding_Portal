@@ -1,0 +1,19 @@
+{% extends "basic_layout.html" %}
+{% block content %}
+<div class="col-md-8">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+</div>
+    <div>
+        <h1>Welcome to Home Page!</h1>
+    </div>
+
+{% endblock content %}
